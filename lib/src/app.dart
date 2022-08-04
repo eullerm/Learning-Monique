@@ -56,7 +56,19 @@ class MyApp extends StatelessWidget {
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.
-          theme: ThemeData(),
+          theme: ThemeData(
+            elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                  onPrimary: Colors.black87,
+                  primary: Colors.grey[300],
+                  minimumSize: Size(88, 36),
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(100)),
+                  ),
+              ),
+            ),
+          ),
           darkTheme: ThemeData.dark(),
           themeMode: settingsController.themeMode,
 
